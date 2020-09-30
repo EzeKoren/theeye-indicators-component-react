@@ -60,7 +60,8 @@ class Root extends View {
     })
 
     // will be appended into section[data-hook=container]
-    this.dashboard_indicadores = new DashboardIndica({ target: this.el.querySelector('[data-hook=container]'),option:'hola'})
+    //this.dashboard_indicadores = new DashboardIndica({ target: this.el.querySelector('[data-hook=container]'),option:'hola'})
+    this.dashboard_indicadores = new Dummy({ target: this.el.querySelector('[data-hook=container]')})
   }
 }
 

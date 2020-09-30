@@ -1,0 +1,10 @@
+{"domain": { "x": [0, 1], "y": [0, 1] },"value": 450,"title": { "text": "Speed" },"type": "indicator","mode": "gauge+number","delta": { "reference": 400 },"gauge": { "axis": { "range": [null, 500] } }}
+{"type": "indicator","value": 200,"delta": { "reference": 160 },"gauge": { "axis": { "visible": "false", "range": [0, 250] } },"domain": { "row": 0, "column": 0 }}
+
+
+ {"type": "indicator","mode": "number+gauge+delta","gauge": { "shape": "bullet" },"delta": { "reference": 40 },"value": 80,"number": { "suffix": "%" },"domain": { "x": [0, 1], "y": [0, 1] }}
+
+ {"values": [19, 26, 55],"labels": ["Residential", "Non-Residential", "Utility"],"type": "pie"}
+
+
+ {"values": [16, 15, 12, 6, 5, 4, 42],"labels": ["US", "China", "European Union", "Russian Federation", "Brazil", "India", "Rest of World" ],"domain": {"column": 0},"name": "GHG Emissions",hoverinfo: "label+percent+name","hole": ".4","type": "pie"}

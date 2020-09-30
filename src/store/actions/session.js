@@ -23,5 +23,11 @@ export default {
         name: data.name
       }
     }
+  },
+  setIndicadores (data) {
+    return {
+      type: 'SET_INDICADOTRES',
+      indicadores: data
+    }
   }
 }
