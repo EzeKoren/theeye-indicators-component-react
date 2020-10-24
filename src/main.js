@@ -56,6 +56,25 @@ const app = {
       // await something()..
       app.loader.hide()
     })
+
+    app.apis.indicadores.get(null, async (err, data) => {
+      if (err) {
+        console.error(err)
+        app.loader.hide()
+        return
+      }
+
+      if (!data) {
+        app.loader.hide()
+        return
+      }
+
+      app.loader.message = 'LOADING'
+      // await something()..
+      app.loader.hide()
+    })
+
+
   },
   loadSession (data) {
     window.location.href = window.location.pathname + '?session=' + btoa(JSON.stringify(data))

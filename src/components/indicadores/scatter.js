@@ -15,32 +15,30 @@ class pie extends View {
 
   render() 
   {
- 
-
     var newNode = document.createElement("div");
-    newNode.className = "card  grid-item "+this.indicador.class;
+    newNode.className = "card grid-item";
     newNode.innerHTML = '<div id="gd' + this.id + '"></div>';
 
     document.getElementById("indicadores").appendChild(newNode);
 
-    this.toras = this.tortas(this.indicador.data)
+
+   this.trace = this.traces(this.indicador.data)
 
     var layout = {
       title: this.indica.title,
       font: { size: 15 },
       showlegend: false,
-      grid: { rows: 1, columns: 2 },
+      grid: { rows: 1, columns: 1 },
     };
 
 
     var config = { responsive: true };
-    Plotly.newPlot("gd" + this.id,this.toras, layout);
+    Plotly.newPlot("gd" + this.id,this.trace, layout);
 
    // return newNode;
   }
 
-
-  tortas(data) 
+  traces(data) 
   {
     var objeto = [];
     for (var i in data) {

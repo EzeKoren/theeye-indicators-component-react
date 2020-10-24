@@ -1,4 +1,6 @@
 export default function session (session = null, action) {
+
+  console.log(action.type)
   switch (action.type) {
     case 'SET_SESSION':
       session = action.session
@@ -8,6 +10,11 @@ export default function session (session = null, action) {
     case 'SET_PROFILE':
       let profile = action.profile
       session.profile = profile
+      return session
+      break
+    case 'SET_INDICADOTRES':
+      let indicadores = action.indicadores
+      session.indicadores = indicadores
       return session
       break
     case 'RESTORE_SESSION':

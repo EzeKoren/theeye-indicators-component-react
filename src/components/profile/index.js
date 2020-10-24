@@ -29,6 +29,8 @@ class Profile extends View {
 
   getState () {
     let session = window.app.store.getState().session
+
+   
     if (session !== null) {
       let profile = (session.profile || {})
       this.name = (profile.name || '')

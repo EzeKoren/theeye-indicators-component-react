@@ -7,4 +7,143 @@
  {"values": [19, 26, 55],"labels": ["Residential", "Non-Residential", "Utility"],"type": "pie"}
 
 
- {"values": [16, 15, 12, 6, 5, 4, 42],"labels": ["US", "China", "European Union", "Russian Federation", "Brazil", "India", "Rest of World" ],"domain": {"column": 0},"name": "GHG Emissions",hoverinfo: "label+percent+name","hole": ".4","type": "pie"}
+ {"values": [16, 15, 12, 6, 5, 4, 42],"labels": ["US", "China", "European Union", "Russian Federation", "Brazil", "India", "Rest of World" ],"domain": {"column": 0},"name": "GHG Emissions","hoverinfo": "label+percent+name","hole": ".4","type": "pie"}
+
+
+
+ {
+  "values": [16, 15, 12, 6, 5, 4, 42],
+  "labels": ["US", "China", "European Union", "Russian Federation", "Brazil", "India", "Rest of World" ],
+  "domain": {"column": 0},
+  "name": "GHG Emissions",
+  "hoverinfo": "label+percent+name",
+  "hole": ".4",
+  "type": "pie"
+},{
+  "values": [27, 11, 25, 8, 1, 3, 25],
+  "labels": ["US", "China", "European Union", "Russian Federation", "Brazil", "India", "Rest of World" ],
+  "text": "CO2",
+  "textposition": "inside",
+  "domain": {"column": 1},
+  "name": "CO2 Emissions",
+  "hoverinfo": "label+percent+name",
+  "hole": ".4",
+  "type": "pie"
+}
+
+
+{
+  "values": [16, 15, 12, 6, 5, 4, 42],
+  "labels": ["US", "China", "European Union", "Russian Federation", "Brazil", "India", "Rest of World" ],
+  "domain": {"column": 0},
+  "name": "GHG Emissions",
+  "hoverinfo": "label+percent+name",
+  "hole": ".4",
+  "type": "pie"
+}
+
+
+
+{
+    "domain": { "x": [0, 1], "y": [0, 1] },
+    "value": "450",
+    "title": { "text": "Speed" },
+    "type": "indicator",
+    "mode": "gauge+number",
+    "delta": { "reference": 400 },
+    "gauge": { "axis": { "range": [null, 500] } }
+  }
+
+
+
+  {
+    "type": "indicator",
+    "mode": "number+gauge+delta",
+    "gauge": { "shape": "bullet" },
+    "delta": { "reference": 300 },
+    "value": "220",
+    "domain": { "x": [0, 1], "y": [0, 1] },
+    "title": { "text": "Profit" }
+  }
+
+
+{ 
+  
+"type": "scatter",
+"data":[
+{
+  "x": [1, 2, 3, 4],
+  "y": [10, 15, 13, 17],
+  "type": "scatter"
+},
+{
+  "x": [1, 2, 3, 4],
+  "y": [16, 5, 11, 9],
+  "type": "scatter"
+}
+]
+}
+
+{ 
+  
+"type": "indicator",
+"data":[
+
+  {
+    "type": "indicator",
+    "mode": "number+delta",
+    "value": "492",
+    "delta": { "reference": "512", "valueformat": ".0f" },
+    "ticker": { "showticker": true },
+    "vmax": "500",
+    "domain": { "y": [0, 1], "x": [0.25, 0.75] },
+    "title": { "text": "Users online" }
+  },
+  {
+    "y": [325, 324, 405, 400, 424, 404, 417, 432, 419, 394, 410, 426, 413, 419, 404, 408, 401, 377, 368, 361, 356, 359, 375, 397, 394, 418, 437, 450, 430, 442, 424, 443, 420, 418, 423, 423, 426, 440, 437, 436, 447, 460, 478, 472, 450, 456, 436, 418, 429, 412, 429, 442, 464, 447, 434, 457, 474, 480, 499, 497, 480, 502, 512, 492]
+  }
+
+
+  ]
+}
+
+//Totas Simple
+{ 
+  
+"type": "pie",
+"data":[
+
+
+{"values":[16,15,12,6,5,4,42],"labels":["US","China","European Union","Russian Federation","Brazil","India","Rest of World"],"domain":{"column":0},"name":"GHG Emissions","hoverinfo":"label+percent+name","hole":".4","type":"pie"}
+
+  ]
+}
+
+
+
+
+//Totas Doble
+{ 
+  
+"type": "pie",
+"data":[
+
+
+{"values":[16,15,12,6,5,4,42],"labels":["US","China","European Union","Russian Federation","Brazil","India","Rest of World"],"domain":{"column":0},"name":"GHG Emissions","hoverinfo":"label+percent+name","hole":".4","type":"pie"}
+,{"values":[16,15,12,6,5,4,42],"labels":["US","China","European Union","Russian Federation","Brazil","India","Rest of World"],"domain":{"column":1},"name":"GHG Emissions","hoverinfo":"label+percent+name","hole":".4","type":"pie"}
+
+  ]
+}
+
+
+//Totas simple
+{ 
+  
+"type": "pie",
+"data":[
+
+
+{"values":[16,15,12,6,5,4,42],"labels":["US","China","European Union","Russian Federation","Brazil","India","Rest of World"],"domain":{"column":0},"name":"GHG Emissions","hoverinfo":"label+percent+name","hole":".4","type":"pie"}
+
+  ]
+}
