@@ -10,7 +10,6 @@ class Profile extends View {
       <div data-component="profile">
         <div data-component="logged-in">
           Hola, <b data-hook="name"></b>
-
           <a class="round-btn" href="#" data-hook="logout">Salir</a>
         </div>
         <div data-hook="counter-container" style="position: absolute;top: 79px; right: 226px;"> </div>
@@ -29,7 +28,6 @@ class Profile extends View {
 
   getState () {
     let session = window.app.store.getState().session
-
    
     if (session !== null) {
       let profile = (session.profile || {})
@@ -58,15 +56,15 @@ class Profile extends View {
       .addEventListener('click', this.onClickLogout, false)
   }
 
-  renderDocumentsCount () {
-    let counter = new DocumentsCounter()
-    this.renderChild(counter,'[data-hook=counter-container]')
-  }
-
   render () {
     super.render()
     this.renderProfile()
-    this.renderDocumentsCount()
+    //this.renderDocumentsCount()
+  }
+
+  renderDocumentsCount () {
+    let counter = new DocumentsCounter()
+    this.renderChild(counter,'[data-hook=counter-container]')
   }
 
   onClickLogout (event) {

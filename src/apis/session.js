@@ -5,9 +5,13 @@ import config from 'config'
 const gateway = config.api.gateway
 
 export default {
-  login (username, password) {
+  login (username, password, customer) {
     window.app.loader.show('LOADING...')
-    const url = `${gateway}/auth/login`
+    let url = `${gateway}/auth/login`
+    if (customer) {
+      url += `?customer=${customer}`
+    }
+
     http  
       .post(url)
       //.send({ username, password }) // query string

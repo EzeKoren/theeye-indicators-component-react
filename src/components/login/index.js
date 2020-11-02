@@ -12,10 +12,13 @@ class Login extends View {
       <h2>Login</h2>
         <form>
           <div >
-            <input type="text" name="email" placeholder="email" required style="">
+            <input type="text" name="email" placeholder="username or email" required style="">
           </div>
           <div >
             <input type="password" name="password" placeholder="password" required >
+          </div>
+          <div >
+            <input type="text" name="customer" placeholder="customer name (optional)" >
           </div>
 
           <div data-hook="submit">
@@ -60,13 +63,14 @@ class Login extends View {
   onClickSubmit (event) {
     event.preventDefault()
 
-    let form = this.el.querySelector('form')
-
-    let email = form.querySelector('input[name=email]').value
-    let password = form.querySelector('input[name=password]').value
+    const form = this.el.querySelector('form')
+    const email = form.querySelector('input[name=email]').value
+    const password = form.querySelector('input[name=password]').value
+    const customer = form.querySelector('input[name=customer]').value
+    
 
     if (email && password) {
-      app.apis.session.login(email, password)
+      app.apis.session.login(email, password, customer)
     }
   }
 }
