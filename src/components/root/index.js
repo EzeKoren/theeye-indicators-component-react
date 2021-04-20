@@ -1,6 +1,5 @@
 import View from '../view'
-import Dummy from '../dummy'
-import DashboardIndica from '../dashboard_indicadores'
+import IndicatorsDashboard from '../dashboard_indicadores'
 import Profile from '../profile'
 import Login from '../login'
 import './styles.less'
@@ -27,6 +26,7 @@ class Root extends View {
     this.updateState = this.updateState.bind(this)
     this.updateState()
     window.app.store.subscribe(this.updateState)
+    window.root = this
   }
 
   getSessionState () {
@@ -34,16 +34,18 @@ class Root extends View {
     return window.app.store.getState().session
   }
 
-  updateState() {
+  updateState () {
     let session = this.getSessionState()
     if (session && session.profile) {
-      this.dashboard_indicadores.render()
-      this.el
-        .querySelector('[data-hook=container]')
-        .appendChild(this.dashboard_indicadores.el)
+      if (this.main && !this.main.rendered) {
+        this.main.render()
+        this.el
+          .querySelector('[data-hook=container]')
+          .appendChild(this.main.el)
+      }
     } else {
-      if (this.dashboard_indicadores) {
-        this.dashboard_indicadores.destroy()
+      if (this.main) {
+        this.main.destroy()
       }
     }
   }
@@ -59,9 +61,9 @@ class Root extends View {
       target: this.el.querySelector('[data-hook=profile]')
     })
 
-    // will be appended into section[data-hook=container]
-    //this.dashboard_indicadores = new DashboardIndica({ target: this.el.querySelector('[data-hook=container]'),option:'hola'})
-    this.dashboard_indicadores = new Dummy({ target: this.el.querySelector('[data-hook=container]')})
+    this.main = new IndicatorsDashboard({
+      target: this.el.querySelector('[data-hook=container]')
+    })
   }
 }
 

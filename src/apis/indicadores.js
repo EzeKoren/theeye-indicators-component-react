@@ -6,7 +6,6 @@ const gateway = config.api.gateway
 
 export default {
 
-
   get (access_token = null, next) {
     next || (next = ()=>{})
 

@@ -1,14 +1,11 @@
 export default {
-  restore () {
-    return { type: 'RESTORE_INDICADOTRES' }
+  remove (id) {
+    return { type: 'REMOVE_INDICATOR', id }
   },
-  destroy () {
-    return { type: 'DESTROY_INDICADOTRES' }
+  set (indicators) {
+    return { type: 'SET_INDICATORS', indicators }
   },
-  set (data) {
-    return {
-      type: 'SET_INDICADOTRES',
-      indicadores: data
-    }
+  add (indicator) {
+    return { type: 'ADD_INDICATOR', indicator }
   }
 }
