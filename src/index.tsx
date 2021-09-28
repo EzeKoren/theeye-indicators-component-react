@@ -17,21 +17,22 @@ import { fetchIndicators } from "./apis/indicators/indicators.handler";
 let alreadyChecked = false;
 
 const HandleInitialState = () => {
-    // let history = useHistory();
-    // const handleState = () => {
-    //     const state = store.getState();
-    //     console.log(state);
-    //     if (!alreadyChecked) {
-    //         getProfile((err: any, profile: any) => {
-    //             alreadyChecked = true;
-    //         });
-    //     }
-    //     if (state.session.profile) 
-    //         history.push("/main")
-    //     else history.push("/login");
-    // };
-    // store.subscribe(handleState);
-    return <></>;
+    let history = useHistory();
+    const handleState = () => {
+	const state = store.getState();
+	console.log(state);
+        if (!alreadyChecked) {
+             getProfile((err: any, profile: any) => {
+                 alreadyChecked = true;
+             });
+         }
+	    if (state.session.profile) {
+    		console.log("Is logged in!");
+            history.push("/main")
+        } else history.push("/login");
+    }
+    store.subscribe(handleState)
+    return <></>
 };
 
 const FourOhFour = () => {

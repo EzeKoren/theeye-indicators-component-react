@@ -1,6 +1,5 @@
 import http from "superagent";
 import config from "../config/config";
-
 import store from "../store";
 import { storeLogin, storeLogout, storeProfile, cookie, profile } from "./session.slice";
 
