@@ -5,9 +5,12 @@ import { storeLogin, storeLogout, storeProfile, cookie, profile } from "./sessio
 
 const gateway = config.api.gateway;
 
-export function Login(mail: string, pass: string) {
+export function Login(mail: string, pass: string, customer: string | undefined) {
     if (mail && pass) {
-        const url = gateway + "/auth/login";
+        let url = gateway + "/auth/login";
+        if (customer) {
+            url += '?customer=' + customer;
+        }
         http.post(url)
             .set("accept", "application/json")
             .set("content-type", "application/json")

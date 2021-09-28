@@ -12,11 +12,12 @@ import logo from "./assets/logo.png"
 function LoginPage() {
 	const [user, setUser] = useState("");
 	const [pass, setPass] = useState("");
+	const [cust, setCust] = useState("");
 
 	const history = useHistory()
 
-	const btnLogin = (email: string, passw: string) => {
-		Login(email, passw);
+	const btnLogin = (email: string, passw: string, cus: string) => {
+		Login(email, passw, cus);
 	};
 
 	const params = queryParams.get();
@@ -70,9 +71,19 @@ function LoginPage() {
 						placeholder="password"
 						required
 					></input>
+					<input
+						value={cust}
+						onChange={(
+							e: React.ChangeEvent<HTMLInputElement>
+						): void => setCust(e.target.value)}
+						type="text"
+						name="customer"
+						placeholder="Customer (leave empty for default)"
+						required
+					></input>
 					<button
 						className="submit-btn"
-						onClick={() => btnLogin(user, pass)}
+						onClick={() => btnLogin(user, pass, cust)}
 					>
 						SIGN IN
 					</button>
