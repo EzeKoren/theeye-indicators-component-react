@@ -1,6 +1,7 @@
 import http from "superagent";
 import config from "../config/config";
 import store from "../store";
+import { fetchIndicators } from "../indicators/indicators.handler";
 import { storeLogin, storeLogout, storeProfile, cookie, profile } from "./session.slice";
 
 const gateway = config.api.gateway;
@@ -30,6 +31,7 @@ export function Login(mail: string, pass: string, customer: string | undefined) 
                 };
                 store.dispatch(storeLogin({ payload: c }));
                 getProfile();
+                fetchIndicators();
             });
     }
 }
