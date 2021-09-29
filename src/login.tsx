@@ -23,14 +23,11 @@ function LoginPage() {
 	const params = queryParams.get();
 	
 
-	console.log(params)
 	const redir = params.redirect_callback;
 
 	const handleState = () => {
 		const state = store.getState();
-		console.log(state);
 		if (state.session.profile) {
-			console.log("Is logged in!");
 			if (redir != undefined)
 				window.location.href = redir + "?" + queryParams.set({access_token: state.session.session?.payload?.token});
 			else

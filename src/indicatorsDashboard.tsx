@@ -8,9 +8,16 @@ import { Logout } from "./apis/session/session.handler";
 import { removeAll, dataViewed } from "./apis/indicators/indicators.slice";
 
 const IndicatorsDashboard = () => {
+    const fetch = () => fetchIndicators()
+    const clean = () => store.dispatch(removeAll())
+    const logout = () => {
+        Logout()
+        history.push("/login")
+    }
+    
     const indArray = useSelector(getIndicators)
     const history = useHistory()
-    const objs = (() => {try {
+    const objs = (() => { try {
         return indArray.map((d: any) => <Graph id={d.id} />)
     } catch (error) {
         return <h1>No indicators</h1>
@@ -23,13 +30,6 @@ const IndicatorsDashboard = () => {
             // This fixes a glitch with Plotly where Waterfall graphs wouldn't render on hook 
         }
     })
-
-    const fetch = () => fetchIndicators()
-    const clean = () => store.dispatch(removeAll())
-    const logout = () => {
-        Logout()
-        history.push("/login")
-    }
 
     return <>
         <button onClick={fetch}>fetch</button>

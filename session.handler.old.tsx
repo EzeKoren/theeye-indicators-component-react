@@ -22,7 +22,7 @@ export default function SessionHandler() {
 
 	const dispatch = useDispatch();
 
-	RefreshLogin = () => {
+	const RefreshLogin = () => {
 		s = useSelector((state: RootState) => state.session.session);
 	};
 	RefreshLogin();
@@ -32,7 +32,6 @@ export default function SessionHandler() {
 	};
 
 	const login = (email: string, password: string) => {
-		console.log([email, password]);
 		if (email && password) {
 			const url = gateway + "/auth/login";
 			http.post(url)

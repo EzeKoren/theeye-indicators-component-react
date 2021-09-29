@@ -11,14 +11,10 @@ function MainPage() {
 
     const logged = useSelector(isLoggedIn);
 
-    console.log(logged);
-
     // const handleState = () => {
     // 	const state = store.getState();
-    // 	console.log(state);
     // 	if (!state.session.profile) {
-    // 		console.log("Is logged out!");
-    //         history.push("/login")
+    //      istory.push("/login")
     // 	}
     // };
 
@@ -34,9 +30,9 @@ function MainPage() {
                         console.log(store.getState());
                     })
                 }
-            >
-                test
-            </button>
+>
+                    test
+                </button>
         </div>
     );
 }

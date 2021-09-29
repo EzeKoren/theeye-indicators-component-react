@@ -54,7 +54,6 @@ export const sessionSlice = createSlice({
             state.profile = null;
         },
         storeProfile: (state, action) => {
-			console.log(action.payload)
             state.profile = action.payload.payload;
         },
     },

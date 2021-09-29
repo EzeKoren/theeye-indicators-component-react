@@ -12,9 +12,7 @@ export default function TokenLoginPage() {
 
     const handleState = () => {
 		const state = store.getState();
-		console.log(state);
 		if (state.session.profile) {
-			console.log("Is logged in!");
 			history.push("/main")
 		} 
     }
