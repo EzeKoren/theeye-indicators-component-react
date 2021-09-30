@@ -1,0 +1,26 @@
+$indicator-width: 320px;
+$indicator-height: 240px;
+
+.indicatorDashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, $indicator-width);
+    grid-template-rows: repeat(auto-fill, $indicator-height);
+
+    > div {
+        width: $indicator-width;
+        height: $indicator-height;
+
+        font-family: "Open Sans", verdana, arial, sans-serif; 
+        font-size: 14px; 
+        fill: rgb(68, 68, 68); 
+        opacity: 1; 
+        font-weight: normal; 
+        white-space: pre;
+
+        > .title {
+            font-size: 1.4em;
+            font-weight: bold;
+            padding: 0.8ch;
+        }
+    }
+}

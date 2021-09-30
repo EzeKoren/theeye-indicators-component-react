@@ -14,8 +14,6 @@ export default function Graph(props: any) {
         plot = <Plot
             data={ data.value.data }
             layout={{
-                width: 320,
-                height: 240,
                 title: data !== undefined ? data.title : "Placeholder",
             }}
         />
@@ -29,8 +27,6 @@ export default function Graph(props: any) {
                 gauge: { axis: { range: [null, 100], visible: false }}
             }]}
             layout={{
-                width: 320,
-                height: 240,
                 title: data !== undefined ? data.title : "Placeholder",
             }}
         />
@@ -42,19 +38,11 @@ export default function Graph(props: any) {
                 value: data.value,
             }]}
             layout={{
-                width: 320,
-                height: 240,
                 title: data !== undefined ? data.title : "Placeholder",
             }}
         />
     } else if (data?.type == "text") { // WIP: Falta el diseño
-        plot = <div className={ data.type } style={{
-            position: 'relative',
-            display: 'inline-block',
-            width: 320, 
-            height: 240,
-            fontSize: '12px'
-        }}>
+        plot = <div className={ data.type }>
             <div className="title" style={{
                 fontSize: '1.2em',
                 textAlign: 'center'

@@ -6,6 +6,7 @@ import store from "./apis/store";
 import Graph from "./indicatorsGraph";
 import { Logout } from "./apis/session/session.handler";
 import { removeAll, dataViewed } from "./apis/indicators/indicators.slice";
+import './indicatorsDashboard.scss';
 
 const IndicatorsDashboard = () => {
     const fetch = () => fetchIndicators()
