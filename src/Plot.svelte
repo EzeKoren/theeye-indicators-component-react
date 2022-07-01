@@ -47,9 +47,9 @@
       value: data.value,
     }]
   } else if (data?.type == "text") {
-  //   el = document.createElement('p')
-  //   el.innerText = data?.value
-  // } else if (data?.type == "html") {
+    el = document.createElement('p')
+    el.innerText = data?.value
+  } else if (data?.type == "html") {
     el = document.createElement('div')
     el.innerHTML = data?.value
   }
