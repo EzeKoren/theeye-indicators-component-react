@@ -39,7 +39,7 @@
 <style>
   .plot-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(10, 1fr);
     grid-auto-rows: 110px;
     grid-gap: 20px;
     grid-auto-flow: dense;
